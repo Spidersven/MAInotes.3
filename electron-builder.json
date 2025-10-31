@@ -1,0 +1,20 @@
+{
+  "appId": "com.pycodecloud.mixnote",
+  "productName": "MixNote",
+  "files": [
+    "dist/**/*",
+    "files/src/renderer/dist/**/*",
+    "public/**/*"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "public/icon.ico"
+  },
+  "mac": {
+    "target": ["dmg", "zip"],
+    "icon": "public/icon.icns"
+  },
+  "linux": {
+    "target": ["AppImage", "deb"]
+  }
+}

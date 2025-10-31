@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es2021",
+    "module": "commonjs",
+    "outDir": "dist/main",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["files/src/main.ts", "files/src/preload.ts", "files/src/vault/indexer.ts", "files/src/shared/**/*.ts", "files/src/renderer/src/e2ee/e2ee.ts", "files/src/renderer/src/utils/linkUtils.ts"]
+}

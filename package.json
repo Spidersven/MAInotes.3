@@ -1,0 +1,47 @@
+{
+  "name": "mixnote-full",
+  "version": "0.5.0",
+  "description": "MixNote — Obsidian-like note editor (Electron + React + TS) with Monaco + E2EE + AI + Drive sync",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "start": "concurrently \"npm:dev:electron\" \"npm:dev:renderer\"",
+    "dev:electron": "wait-on tcp:5173 && electron .",
+    "dev:renderer": "cd files/src/renderer && npm run dev",
+    "build": "npm run build:electron && npm run build:renderer",
+    "build:electron": "tsc -p tsconfig.main.json",
+    "build:renderer": "cd files/src/renderer && npm run build",
+    "pack-electron": "npm run build && electron-builder --config config/electron-builder.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "echo \"No tests yet\""
+  },
+  "author": "mixnote",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "electron": "^26.0.0",
+    "wait-on": "^7.0.1",
+    "typescript": "^5.4.5",
+    "electron-builder": "^24.6.0",
+    "eslint": "^8.50.0",
+    "@types/uuid": "^9.0.2"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "cytoscape": "^3.24.0",
+    "fs-extra": "^11.1.1",
+    "gray-matter": "^4.0.3",
+    "marked": "^5.0.2",
+    "simple-git": "^3.17.0",
+    "uuid": "^9.0.0",
+    "fuse.js": "^6.6.2",
+    "libsodium-wrappers": "^0.7.11",
+    "monaco-editor": "^0.54.0",
+    "node-fetch": "^2.6.7",
+    "keytar": "^7.9.0",
+    "open": "^9.0.0",
+    "express": "^4.18.2"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^8.0.0"
+  }
+}
